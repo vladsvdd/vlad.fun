@@ -1,0 +1,16 @@
+AuthType Basic
+
+AuthName "Restricted Files"
+
+AuthUserFile /var/www/config/.vlad.vlad.fun.htpasswd
+
+Require valid-user
+
+RewriteEngine On
+
+# не файл
+RewriteCond  %{REQUEST_FILENAME} !-f
+# не папка
+RewriteCond  %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*)$ index.php?route=$1 [QSA,L]
