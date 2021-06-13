@@ -3,6 +3,7 @@ try {
 	/*
  * Автозагрузка файлов, через аннонимную функцию
  */
+    //test
 	function myAutoLoader(string $className)
 	{
 		require_once __DIR__ . '/src/' . str_replace('\\', '/', $className) . '.php';
