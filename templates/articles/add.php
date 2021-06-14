@@ -33,8 +33,8 @@
                                     </select>
                                     <br><br>
                                     <label for="name">Текст статьи</label>
-                                    <textarea class="input" name="text"
-                                              placeholder="Текст статьи"><?= $_POST['text'] ?? '' ?></textarea>
+                                    <textarea class="input articleEditor" name="text"
+                                         placeholder="Текст статьи"><?= $_POST['text'] ?? '' ?></textarea>
                                 </div>
                                 <input type="submit" class="primary-button" value="Создать">
                             </div>

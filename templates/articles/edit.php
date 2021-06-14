@@ -43,7 +43,7 @@
                                         </select>
                                         <br><br>
                                         <label for="name">Текст статьи</label>
-                                        <textarea id="textarea-admin" class="input" name="text"
+                                        <textarea id="textarea-admin" class="input articleEditor" name="text"
                                                   placeholder="Текст статьи"><?= $_POST['text'] ?? $article->getText() ?></textarea>
                                     </div>
                                     <input type="submit" class="primary-button" value="Обновить">

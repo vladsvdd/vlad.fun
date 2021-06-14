@@ -79,5 +79,19 @@
 <script src="/js/bootstrap.min.js"></script>
 <script src="/js/main.js"></script>
 
+<!-- Import jquery-confirm -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
+<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+<!-- Import Trumbowyg plugins... -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.24.0/plugins/cleanpaste/trumbowyg.cleanpaste.min.js" integrity="sha512-ijlePSMXPNLcTGnRf4bMEbyPLasyvr14NPC+9PDVR/EVTypISJDLiIYQuW4uSk3Fi7nclUq4cQMcVccaI9zdMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.24.0/plugins/pasteimage/trumbowyg.pasteimage.min.js" integrity="sha512-x5CKtRHoS+9Zj+zXG5dMPmbzZzZFmaLhgqDxSYdqhge5rGCi9Yu+h6T3JXQCg67nPloMBIxW2JRpZXG9UpaY9A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- Import Trumbowyg -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.24.0/trumbowyg.min.js" integrity="sha512-1grPXW6pB3WKyOH6zbXrYrYf+SHKeky6JTpUVtjDfz4NZ6uIu0HLRNSmXnv5rjn7iLJXrWLoVFR3XBAuaG3IRg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Trumbowyg/2.24.0/ui/trumbowyg.min.css" integrity="sha512-baPsQggIoNC4ezJg68uPTtrEJ9OLY1SlnTnnDrYn+LgUBMbc1q5gSD9v5BN4+MWpfIG50AYhnCFmCDszbJaygw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 </body>
 </html>

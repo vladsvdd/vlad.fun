@@ -10,12 +10,11 @@
     <meta name="description" content="Все о программировании от новичка до профи. Рассказываю свой путь входа в IT. Как обучался, что делал до того как получил первый офер на работу программистом.">
     <meta name="keywords" content="путь веб разработчика, программирование, статьи по программированию, войти в IT, web">
     <link rel="canonical" href="https://vlad.fun/" />
+
     <!--Подключаем библиотеку-->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.2/jquery-confirm.min.js"></script>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <!-- Import jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>-->
 
     <!-- Google font -->
     <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:700%7CNunito:300,600" rel="stylesheet">
@@ -34,6 +33,10 @@
             $(".dialog1").on("click", function () {
                 return;
             });
+
+            // <-- Init Trumbowyg -->
+            // Doing this in a loaded JS file is better, I put this here for simplicity
+            $('.articleEditor').trumbowyg();
         });
     </script>
 </head>

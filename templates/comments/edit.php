@@ -24,7 +24,7 @@
                                     <div class="form-group">
 
                                         <label for="text">Комментарий</label>
-                                        <textarea class="input" name="text" placeholder="Текст статьи"><?= $_POST['text'] ?? $comment->getText() ?></textarea>
+                                        <textarea class="input articleEditor" name="text" placeholder="Текст статьи"><?= $_POST['text'] ?? $comment->getText() ?></textarea>
                                     </div>
 
                                     <input type="submit" class="primary-button" value="Обновить">
