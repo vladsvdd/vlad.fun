@@ -113,6 +113,5 @@ class ArticlesController extends AbstractController
 			throw new NotFoundException();
 		}
 		$article->delete();
-		var_dump($article);
 	}
 }

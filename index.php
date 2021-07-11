@@ -3,7 +3,7 @@ try {
 	/*
  * Автозагрузка файлов, через аннонимную функцию
  */
-    //test
+    //test1121
 	function myAutoLoader(string $className)
 	{
 		require_once __DIR__ . '/src/' . str_replace('\\', '/', $className) . '.php';
@@ -44,6 +44,9 @@ try {
 } catch (\MyProject\Exceptions\ForbiddenException $e) {
 	$view = new MyProject\Views\View('/../../../templates/errors');
 	$view->renderHtml('403.php', ['error' => $e->getMessage()], 403);
+} catch (\MyProject\Exceptions\NotCoursePurchased $e) {
+    $view = new MyProject\Views\View('/../../../templates/errors');
+    $view->renderHtml('notCoursePurchased.php', ['error' => $e->getMessage()], 401);
 }
 
 

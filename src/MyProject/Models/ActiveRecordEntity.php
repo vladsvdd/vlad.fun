@@ -96,6 +96,39 @@ abstract class ActiveRecordEntity
 		return $result[0];
 	}
 
+	/*
+	 * Поиск по нескольким полям в таблице
+	 */
+    public static function findOneByColumns(array $columnNameAndValue): ?array
+    {
+        $db = Db::getInstance();
+
+        $filteredProperties = array_filter($columnNameAndValue);
+        $columns = [];
+        $params2values = [];
+        foreach ($filteredProperties as $columnName => $value) {
+            $paramName = ':' . $columnName;
+            $columns[] = '`' . $columnName . '`=' . $paramName;
+            $params2values[$paramName] = $value;
+        }
+        $columnsToSql = implode(' AND ', $columns);
+        $valueNameToSql = $params2values;
+
+//        exit(var_dump('SELECT * FROM `' . static::getNameTable() . '` WHERE ' . $columnsToSql . ';',
+//            $valueNameToSql,
+//            static::class));
+
+        $result = $db->query(
+            'SELECT * FROM `' . static::getNameTable() . '` WHERE ' . $columnsToSql . ';',
+            $valueNameToSql,
+            static::class
+        );
+        if ($result === []){
+            return null;
+        }
+        return $result;
+    }
+
 	public function delete()
 	{
 		$db = Db::getInstance();
