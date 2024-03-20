@@ -29,12 +29,12 @@ class EmailSender
 		$mail->isSMTP();
 		$mail->SMTPAuth = true;
 		$mail->SMTPDebug = 0;
-		$mail->Host = 'ssl://smtp.jino.ru';
-		$mail->Port = 465;
-		$mail->Username = 'help@vlad.fun';
-		$mail->Password = 'R9N9v82X7njDcyG';
-		// От кого
-		$mail->setFrom('help@vlad.fun', 'vlad.fun');
+        $mail->Host = '';
+        $mail->Port = 465;
+        $mail->Username = '';
+        $mail->Password = '';
+        // От кого
+        $mail->setFrom('huntinghardware@gmail.com', 'stukalov.blog');
 		// Кому
 		try {
 			$mail->addAddress($receiver->getEmail(), $receiver->getNickname());

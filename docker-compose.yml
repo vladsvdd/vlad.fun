@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+    # PHP + Apache сервер
+    php-apache:
+      build:
+        context: .
+        dockerfile: Dockerfile
+      ports:
+        - "80:80"
+      volumes:
+        - .:/var/www/html
+        - ./img:/var/www/html/img
+      environment:
+        PHP_UPLOAD_MAX_FILESIZE: "100M"  # Установка максимального размера загружаемых файлов
+        PHP_POST_MAX_SIZE: "100M"         # Установка максимального размера POST данных
+
+    mysql:
+      image: mysql:8
+      restart: always
+      environment:
+        MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+        MYSQL_DATABASE: ${MYSQL_DATABASE}
+      ports:
+        - "3306:3306"
+      volumes:
+        - ./mysql_data:/var/lib/mysql

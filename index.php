@@ -1,9 +1,8 @@
 <?php
 try {
 	/*
- * Автозагрузка файлов, через аннонимную функцию
- */
-    //test1121
+     * Автозагрузка файлов, через аннонимную функцию
+     */
 	function myAutoLoader(string $className)
 	{
 		require_once __DIR__ . '/src/' . str_replace('\\', '/', $className) . '.php';
@@ -48,18 +47,3 @@ try {
     $view = new MyProject\Views\View('/../../../templates/errors');
     $view->renderHtml('notCoursePurchased.php', ['error' => $e->getMessage()], 401);
 }
-
-
-/*interface MyPacketThrowable extends Throwable
-{
-}
-
-class MyPackExeption extends Exception implements MyPacketThrowable
-{
-}
-
-try {
-	throw new MyPackExeption();
-} catch (Throwable $e) {
-	echo 'thro222222222222';
-}*/

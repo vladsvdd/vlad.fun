@@ -189,7 +189,6 @@ class Article extends ActiveRecordEntity
 		$this->save();
 
 		return $this;
-
 	}
 
 	public static function findLast5Article(int $limit): array
@@ -197,7 +196,7 @@ class Article extends ActiveRecordEntity
 		$db = Db::getInstance();
 		$countShow = 5;
 		$offset = $limit - 5;
-		return $db->query('SELECT * FROM `' . static::getNameTable() . '` ORDER BY created_at DESC LIMIT ' . $countShow . ' OFFSET ' . $offset, [], static::class);
+		return $db->query('SELECT * FROM `' . static::getNameTable() . '` ORDER BY created_at DESC LIMIT ' . $countShow . ' OFFSET ' . $offset, [], static::class) ?? [];
 	}
 
 	public static function findPopularArticle(): array
@@ -224,6 +223,6 @@ class Article extends ActiveRecordEntity
 		$sql = 'SELECT * FROM `' . static::getNameTable() . '` WHERE ' . $columnsToSql;
 
 		$popularArticle = $db->query($sql, $params2values, static::class);
-		return $popularArticle;
+		return $popularArticle ?? [];
 	}
 }

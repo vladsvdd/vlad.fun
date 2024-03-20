@@ -1,11 +1,3 @@
-AuthType Basic
-
-AuthName "Restricted Files"
-
-AuthUserFile /var/www/config/.vlad.vlad.fun.htpasswd
-
-Require valid-user
-
 RewriteEngine On
 
 # не файл

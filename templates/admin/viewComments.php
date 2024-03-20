@@ -30,7 +30,7 @@
                                 <div class="media-body">
                                     <div class="media-heading">
                                         <h4><?= $comment->getAuthor()->getNickname(); ?></h4>
-                                        <span class="time"><?= dateFormat($comment->getCreateAt()); ?></span>
+                                        <span class="time"><?= dateFormat($comment->getCreatedAt()); ?></span>
                                         <a href="#" class="reply">Reply</a>
                                     </div>
                                     <p id="comment<?= $comment->getId() ?>">

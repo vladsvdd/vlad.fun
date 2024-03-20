@@ -54,7 +54,7 @@
                             <h4><?= $comment->getAuthor()->getNickname(); ?></h4>
                             <span class="time">
 
-                                <?= dateFormat($comment->getCreateAt()); ?>
+                                <?= dateFormat($comment->getCreatedAt()); ?>
                             </span>
                             <!--доделать
                             <a href="#" class="reply">Reply</a>

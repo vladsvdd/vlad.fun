@@ -12,7 +12,13 @@ class Upload
 		$extension = pathinfo($file['name'], PATHINFO_EXTENSION);
 
 		$newName = $userNickname . '_' . date("d-m-Y_H:i:s");
-		$newFilePath = __DIR__ . '/../../../img/photos/' . $newName . '.' . $extension;
+        $newDirectory = __DIR__ . '/../../../img/photos/';
+        $newFilePath = $newDirectory . $newName . '.' . $extension;
+
+        // Проверяем существует ли каталог, если нет - создаем его
+        if (!file_exists($newDirectory)) {
+            mkdir($newDirectory, 0777, true); // Создаем каталог с правами 0755
+        }
 
 		if (!in_array($extension, $allowedExtensions)) {
 			return ['error' => 'Загрузка файлов с таким расширением запрещена!'];

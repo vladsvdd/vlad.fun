@@ -16,7 +16,5 @@ function dateFormat(string $objectDate): string
 	$positionSecond = strrpos($time, ':');
 	$time = substr($time, 0, $positionSecond);
 
-	$result = $date . ' в ' . $time;
-
-	return $result;
+    return $date . ' в ' . $time;
 }

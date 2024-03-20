@@ -14,7 +14,7 @@ class Comment extends ActiveRecordEntity
 	protected $authorId;
 	protected $articleId;
 	protected $text;
-	protected $createAt;
+	protected $createdAt;
 
 	public static function getNameTable(): string
 	{
@@ -56,17 +56,17 @@ class Comment extends ActiveRecordEntity
 	/**
 	 * @return mixed
 	 */
-	public function getCreateAt()
+	public function getCreatedAt()
 	{
-		return $this->createAt;
+		return $this->createdAt;
 	}
 
 	/**
-	 * @param mixed $createAt
+	 * @param mixed $createdAt
 	 */
-	public function setCreateAt($createAt): void
+	public function setCreatedAt($createdAt): void
 	{
-		$this->createAt = $createAt;
+		$this->createdAt = $createdAt;
 	}
 
 	/**
@@ -123,7 +123,7 @@ class Comment extends ActiveRecordEntity
 		$db = Db::getInstance();
 		$countShow = 5;
 		$offset = $limit - 5;
-		return $db->query('SELECT * FROM `' . static::getNameTable() . '` ORDER BY create_at DESC LIMIT ' . $countShow . ' OFFSET ' . $offset, [], static::class);
+		return $db->query('SELECT * FROM `' . static::getNameTable() . '` ORDER BY created_at DESC LIMIT ' . $countShow . ' OFFSET ' . $offset, [], static::class) ?? [];
 	}
 
 	public function updateFromArray(array $fields): Comment
