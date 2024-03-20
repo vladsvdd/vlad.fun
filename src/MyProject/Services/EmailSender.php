@@ -2,7 +2,7 @@
 
 namespace MyProject\Services;
 
-require_once __DIR__ . '/../library/vendor/autoload.php';
+require_once __DIR__ . '/../../../vendor/autoload.php';
 
 use MyProject\Models\Users\User;
 use PHPMailer\PHPMailer\PHPMailer;
@@ -47,22 +47,11 @@ class EmailSender
 		// Тело письма
 		$mail->msgHTML($body);
 
-		// Приложение
-//		$mail->addAttachment(__DIR__ . '/image.jpg');
-
 		try {
 			$mail->send();
 			return ['The email message was sent.'];
 		} catch (Exception $e) {
 			return ['error' => 'Mailer Error: ' . $mail->ErrorInfo];
 		}
-
-
-		/*$success = mail($receiver->getEmail(), $subject, $body, 'Content-Type: text/html; charset=UTF-8');
-		if (!$success) {
-			return 'Возникла ошибка при отправке письма! ' . $errorMessage = error_get_last()['message'] .
-					'. Обратитесь к администратору сайта.';
-		}
-		return '';*/
 	}
 }
